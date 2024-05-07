@@ -1,0 +1,263 @@
+@import '/styles/mixins.scss';
+@import '/styles/variables.scss';
+@import '/styles/fonts.scss';
+.customCheckBox{
+  position: relative;
+  input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    &:checked ~ .checkmark{
+      background-color: white;
+      -webkit-transform: rotate(0deg) scale(1);
+      -ms-transform: rotate(0deg) scale(1);
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+      border: 1px solid $mainColorDark;
+      &::after{
+        -webkit-transform: rotate(45deg) scale(1);
+        -ms-transform: rotate(45deg) scale(1);
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+        left: 5px;
+        top: -1px;
+        width: 7px;
+        height: 14px;
+        border: solid $mainColorDark;
+        border-width: 0 2px 2px 0;
+        background-color: transparent;
+        border-radius: 1px;
+      }
+
+    }
+  }
+  .checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #979797;
+    border-radius: 1px;
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+    &:hover{
+      border: 1px solid $mainColorDark;
+    }
+    &::after{
+      position: absolute;
+      content: "";
+      left: 12px;
+      top: 12px;
+      height: 0;
+      width: 0;
+      border-radius: 5px;
+      border: solid $mainColorDark;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(0deg) scale(0);
+      -ms-transform: rotate(0deg) scale(0);
+      transform: rotate(0deg) scale(0);
+      opacity: 1;
+      transition: all 0.1s ease-out;
+    }
+  }
+  .label{
+    margin-left: 26px;
+    font-family: $gilroyRegular;
+    text-transform: none;
+    white-space: nowrap;
+    &.mediumBold{
+      font-family: $gilroyMedium;
+      font-size: 15px;
+    }
+  }
+  &.blueVersion{
+    height: 18px;
+    width: 18px;
+    label{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .checkmark{
+          background-color: #275AA4;
+          -webkit-transform: rotate(0deg) scale(1);
+          -ms-transform: rotate(0deg) scale(1);
+          transform: rotate(0deg) scale(1);
+          opacity: 1;
+          border: 1px solid #275AA4;
+          &::after{
+            -webkit-transform: rotate(45deg) scale(1);
+            -ms-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+            opacity: 1;
+            left: 5px;
+            top: 0px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            background-color: transparent;
+            border-radius: 1px;
+          }
+        }
+      }
+      .checkmark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid $mainColorMediumDark;
+        border-radius: 3px;
+        transition: all 0.1s ease-out;
+        cursor: pointer;
+        background-color: white;
+        &:hover{
+          border: 1px solid $mainColorDark;
+        }
+        &::after{
+          position: absolute;
+          content: "";
+          left: 12px;
+          top: 12px;
+          height: 0;
+          width: 0;
+          border-radius: 5px;
+          border: solid blue;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(0deg) scale(0);
+          -ms-transform: rotate(0deg) scale(0);
+          transform: rotate(0deg) scale(0);
+          opacity: 1;
+          transition: all 0.1s ease-out;
+        }
+      }
+    }
+    &.disabled{
+      label{
+        input{
+          &:checked ~ .checkmark{
+            background-color: grey;
+            border: 1px solid grey;
+          }
+        }
+      }
+    }
+  }
+  &.bigGreen{
+    height: 23px;
+    width: 23px;
+    label{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .checkmark{
+          background-color: #6BD03C;
+          -webkit-transform: rotate(0deg) scale(1);
+          -ms-transform: rotate(0deg) scale(1);
+          transform: rotate(0deg) scale(1);
+          opacity: 1;
+          border: 1px solid #6BD03C;
+          box-shadow: none;
+          &::after{
+            -webkit-transform: rotate(45deg) scale(1);
+            -ms-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+            opacity: 1;
+            left: 7px;
+            top: 2px;
+            width: 7px;
+            height: 14px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            background-color: transparent;
+            border-radius: 1px;
+          }
+        }
+      }
+      .checkmark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        // border: 1px solid grey;
+        border-radius: 3px;
+        transition: all 0.1s ease-out;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        @media screen and (min-width: 500px) {
+          &:hover{
+            border: 1px solid black;
+            -webkit-transform: rotate(0deg) scale(1);
+            -ms-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+            opacity: 1;
+            &::after{
+              -webkit-transform: rotate(45deg) scale(1);
+              -ms-transform: rotate(45deg) scale(1);
+              transform: rotate(45deg) scale(1);
+              opacity: 1;
+              left: 7px;
+              top: 2px;
+              width: 7px;
+              height: 14px;
+              // border: solid white;
+              border-width: 0 2px 2px 0;
+              background-color: white;
+              border-radius: 1px;
+            }
+          }
+        }
+        &::after{
+          position: absolute;
+          content: "";
+          left: 7px;
+          top: 12px;
+          height: 0;
+          width: 0;
+          border-radius: 5px;
+          border: solid blue;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(0deg) scale(0);
+          -ms-transform: rotate(0deg) scale(0);
+          transform: rotate(0deg) scale(0);
+          opacity: 1;
+          transition: all 0.1s ease-out;
+        }
+      }
+    }
+    .label{
+      margin-left: 32px;
+      font-family: $gilroyMedium;
+      text-transform: none;
+      white-space: nowrap;
+    }
+    &.disabled{
+      label{
+        input{
+          &:checked ~ .checkmark{
+            background-color: grey;
+            border: 1px solid grey;
+          }
+        }
+      }
+    }
+  }
+  .alignCenter{
+    display: flex;
+    align-items: center!important;
+  }
+}

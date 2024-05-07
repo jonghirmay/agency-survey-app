@@ -1,0 +1,139 @@
+/* Brand colors */
+$mainColorDark: #1A3053;
+$mainColorMediumDark: #275aa4;
+$mainColorMediumLight: #1e9dd9;
+$mainColorLight: #265BA5;
+$mainColorLighter: #D4F6F3;
+$bankIdBlue: #235971;
+$bankIdGreen: #00857E;
+$btnBlue: #275aa4;
+$btnGreen: #58be85;
+$btnGreenHover: #5fcf92;
+
+$borderLight: #d3d3d3;
+
+$boxShadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+$boxShadowDark: 0px 2px 4px rgba(0, 0, 0, 0.25);
+$boxShadowLight: 0px 2px 4px rgba(126, 126, 126, 0.12);
+$insetBoxShadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+$insetBoxShadowError: inset 0px 0px 9px 0px rgba(139, 0, 0, 0.1);
+
+
+$preHeaderLight: #a9b9d2;
+$lightBgTextColor: #1e2127;
+$btnColor: #fbebc8;
+$orange: #FFA800;
+$btnColorBlue: #265BA5;
+$bgLightGray: rgb(249,249,249);
+$heroDescription: #959595;
+$darkBgLightText:#e1e1e1;
+$softBlueBg: #effbff;
+
+// Mixin for hiding scroll bar
+@mixin hideScrollBar{
+    &::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    }
+    -ms-overflow-style: none;  /*  Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /*  Hide scrollbar for Firefox */
+}
+
+// Keyframes
+
+// Fade in content quickly
+$fadeInContent: fadeInContent 0.4s normal ease-in-out;
+// Fade in content slowly
+$fadeInContentSemiSlow: fadeInContent 0.6s normal ease-in-out;
+// Fade in content even more slowly
+$fadeInContentSlow: fadeInContent 1.5s normal ease-in-out;
+// Fade in content crazy slowly
+$fadeInContentExtraSlow: fadeInContent 2s normal ease-in-out;
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// Fade in content from right
+$fadeInContentFromRight: fadeInContentFromRight 0.6s normal ease-in-out;
+$fadeInContentFromRightSlow: fadeInContentFromRight 1s normal ease-in-out;
+$fadeInContentFromRightExtraSlow: fadeInContentFromRight 1.8s normal ease-in-out;
+@keyframes fadeInContentFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+// Fade in content from left
+$fadeInContentFromLeft: fadeInContentFromLeft 0.6s normal ease-in-out;
+$fadeInContentFromLeftSlow: fadeInContentFromLeft 1s normal ease-in-out;
+$fadeInContentFromLeftExtraSlow: fadeInContentFromLeft 1.8s normal ease-in-out;
+@keyframes fadeInContentFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+// Fade in content from bottom
+$fadeInContentFromBottom: fadeInContentFromBottom 0.6s normal ease-in-out;
+$fadeInContentFromBottomSlow: fadeInContentFromBottom 1s normal ease-in-out;
+$fadeInContentFromBottomExtraSlow: fadeInContentFromBottom 1.8s normal
+  ease-in-out;
+@keyframes fadeInContentFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+// Fade in content from top
+$fadeInContentFromTop: fadeInContentFromTop 0.6s normal ease-in-out;
+$fadeInContentFromTopSlow: fadeInContentFromTop 1s normal ease-in-out;
+$fadeInContentFromTopExtraSlow: fadeInContentFromTop 1.8s normal ease-in-out;
+@keyframes fadeInContentFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+$skeletonPulsate: skeletonPulsate 1.5s infinite;
+@keyframes skeletonPulsate{
+  0% {
+      opacity: 1;
+  }
+  
+  50% {
+      opacity: 0.5;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}

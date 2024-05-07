@@ -1,0 +1,1122 @@
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/fonts';
+
+//General
+.mainContainer {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: $gilroyRegular;
+  color: $lightBgTextColor;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  
+}
+
+//Typography
+h1, h1 span {
+  font-size: 54px;
+  line-height: 54px;
+  font-family: $gilroyExtraBold;
+
+  @include mobile {
+    font-size: 36px;
+    line-height: 39px;
+  }
+
+  @include tablet-landscape {
+    font-size: 50px;
+    line-height: 52px;
+  }
+}
+
+h2, h2 span {
+  font-size: 40px;
+  line-height: 45px;
+  font-family: $gilroyExtraBold;
+
+  @include mobile {
+    font-size: 27px;
+    line-height: 32px;
+  }
+}
+
+h3, h3 span {
+  font-size: 32px;
+  line-height: 37px;
+  font-family: $gilroyExtraBold;
+  color: $mainColorDark;
+
+  @include mobile {
+    font-size: 23px;
+    line-height: 27px;
+  }
+}
+
+.smallerHeadline h1 {
+  font-size: 48px;
+  line-height: 50px;
+
+  @include mobile {
+    font-size: 34px;
+    line-height: 37px;
+  }
+}
+
+p, p span {
+  font-family: $gilroyMedium;
+}
+
+strong {
+  color: $mainColorDark;
+  font-family: $gilroyBold;
+}
+
+a {
+  color: $mainColorLight;
+}
+
+//Wrappers
+main {
+  padding-top: 68px;
+  min-height: 80vh;
+
+  @include mobile {
+    padding-top: 70px;
+  }
+
+  @include tablet-landscape {
+    padding-top: 54px;
+  }
+
+  .headerTransHero {
+    min-height: 91vh;
+  }
+}
+
+.mobileHeroMarginTop {
+  @include mobile {
+    h1 {
+      margin-top: 54px;
+    }
+  }
+}
+
+/*
+.headerTransMenu {
+  opacity: 1;
+}
+*/
+
+.ordbokSummary {
+  padding: 5%;
+
+  h2 {
+    color: $mainColorDark;
+    margin-bottom: 10px;
+  }
+}
+
+.headerTransOpen {
+  background: $mainColorDark !important;
+}
+
+.outerWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.darkOverlay {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: rgba(26, 48, 83, 0.5);
+  z-index: 2;
+  display: block;
+}
+
+.heroOverlay {
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: rgba(39, 90, 164, 0.77);
+    z-index: 2;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.stickyAdCta {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: $mainColorDark;
+	padding: 10px;
+  z-index: 99;
+
+	@include mobile {
+		padding: 18px;
+		background: $mainColorDark;
+		border-top: 1px solid white;
+    text-align: center;
+
+    a {
+      margin-right: 0;
+    }
+	}
+
+	span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include mobile {
+			display: block;
+
+			a {
+				padding: 11px 15px;
+				display: flex;
+				justify-content: center;
+				margin-top: 10px;
+			}
+		}
+
+		p, strong {
+			display: flex;
+			color: white;
+			margin: 2px 0px;
+			font-size: 19px;
+			line-height: 19px;
+		}
+
+		strong {
+			font-family: $gilroyBold;
+			margin-right: 5px;
+
+      @include mobile {
+        margin-right: 0;
+        font-size: 17px;
+        margin-bottom: 7px;
+        justify-content: center;
+      }
+		}
+
+		p {
+			font-family: $gilroyMedium;
+			margin-right: 8px;
+
+			@include mobile {
+				display: block;
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 16px;
+			}
+		}
+	}
+
+	a {
+		padding: 9px 15px;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		li {
+			display: flex;
+			color: white;
+			margin: 2px 8px;
+			font-family: $gilroyMedium;
+			line-height: 18px;
+
+			svg {
+				max-width: 25px;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+main .heroSmallDesktop {
+  @include desktop {
+    min-height: 52vh;
+  }
+}
+
+main .heroSmallMobile {
+  @include mobile {
+    min-height: 60vh;
+  }
+}
+
+.registerUspList {
+  @include mobile-small {
+    min-height: 100% !important;
+
+    .heroColImage {
+      padding: 0 !important;
+      max-width: 100vw;
+    }
+  }
+}
+
+//Conditional classes
+.hide {
+  visibility: hidden;
+  max-height: 0px;
+}
+
+.show {
+  visibility: visible;
+}
+
+.errorLoadingMsg {
+  color: black;
+  font-family: $gilroyMedium;
+  text-align: center;
+}
+
+.successMessage {
+  background: #54af54;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.menuItemToggled {
+  img {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+.emailPrevent {
+  display: none;
+}
+
+.loader {
+  background-image: url('https://admin.partna.se/wp-content/uploads/2022/02/loader-pulse.gif');
+  margin: 25px auto;
+  background-size: contain; 
+  background-position: center;
+  max-width: 90px;
+  height: 90px;
+  width: 90px;
+  display: block;
+}
+
+.comingSoon {
+  position: relative;
+
+  &:after {
+    content: "Kommer snart";
+    font-size: 12px;
+    color: black;
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    background: $mainColorLight;
+    padding: 3px 10px 2px;
+    border-radius: 15px;
+    color: white;
+    font-family: $gilroyBold;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+}
+
+.comingSoonBig {
+  h4 {
+    position: relative;
+
+    &:after {
+      content: "Kommer snart";
+      font-size: 14px;
+      color: black;
+      position: absolute;
+      top: 1px;
+      right: 0;
+      background: #265BA5;
+      padding: 6px 14px 5px;
+      border-radius: 15px;
+      color: white;
+      font-family: $gilroyBold;
+      text-transform: uppercase;
+  
+      @include mobile {
+        top: 0;
+        right: 0;
+        padding: 3px 10px 2px;
+        font-size: 12px;
+      }
+
+      @include tablet-landscape {
+        top: -10px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.homePage .paragraphIntro {
+	@include mobile {
+		//display: none;
+	}
+}
+
+.fullWidthBtnMobile {
+  @include mobile-small {
+    .primaryBtn, a.primaryBtn {
+      min-width: 100% !important;
+    }
+  }
+}
+
+//Buttons
+.primaryBtn, a.primaryBtn {
+  @include primaryBtn;
+}
+
+.secondaryBtn, a.secondaryBtn {
+  @include secondaryBtn;
+}
+
+.secondaryBtnHeader, a.secondaryBtnHeader {
+  @include secondaryBtnHeader;
+}
+
+.secondaryWhiteBtn, a.secondaryWhiteBtn {
+  @include secondaryWhiteBtn;
+}
+
+.buttonShadow {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btnLonger {
+  min-width: 235px !important;
+  max-width: 270px;
+}
+
+.btnFullWidth {
+  width: 100%;
+}
+
+.floatingCta {
+  @include tablet {
+    display: none;
+    height: 0;
+  }
+
+  @include mobile-small {
+    position: fixed;
+    padding: 17px 19px 15px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 7px 15px rgba(104, 117, 236, 0.25);
+    box-shadow: 0 7px 15px rgba(104, 117, 236, 0.25);
+    font-size: 16px;
+    font-family: $gilroyBold;
+    background-color: $btnGreen;
+    cursor: pointer;
+    left: 50%;
+    min-width: 90%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 9999;
+    bottom: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background: $btnGreenHover;
+      color: white;
+      -webkit-box-shadow: 0 7px 15px rgba(104, 117, 236, 0.37);
+      box-shadow: 0 7px 15px rgba(104, 117, 236, 0.37);
+    }
+  }
+}
+
+//Forms
+#ansok iframe {
+  margin: 5% auto;
+  width: 100%;
+}
+
+.formWrapper {
+  max-width: 450px;
+  margin: 5% auto;
+}
+
+.formElement.formRequired label::after {
+  content: '*';
+  color: red;
+  font-family: $gilroyBold;
+  font-size: 14px;
+}
+
+.formLabel {
+  font-family: $gilroyBold;
+  font-size: 14px;
+  color: $mainColorDark;
+}
+
+.formInput {
+  border: 1px solid #DEDEDE;
+  background: #F5F5F5;
+  font-family: $gilroyRegular;
+  font-size: 16px;
+  padding: 15px 15px 14px;
+  display: block;
+  margin: 10px 0 20px;
+  width: 100%;
+
+  &::placeholder {
+    color: #797979;
+  }
+}
+
+.formCheckBoxWrap {
+  display: flex;
+  font-size: 14px;
+  margin: 25px 0 !important;
+
+  span {
+    width: 100%;
+    margin-left: 12px;
+  }
+
+  .formCheckbox {
+    min-height: 40px;
+  }
+
+  a {
+    color: $mainColorLight;
+  }
+}
+
+.form-switch { 
+  justify-content: flex-end;
+  display: flex;
+
+  .form-check-input {
+    width: 2.9em;
+    height: 1.5em;
+  }
+}
+
+.switchItem {
+  display: flex;
+  align-items: center;
+}
+
+//Backgrounds
+.lightGreyBg {
+  background: #f3f3f3 !important;
+}
+
+.darkBg {
+  background: #1a3053 !important;
+}
+
+.whiteBg {
+  background: #ffffff !important;
+}
+
+.softGrayBg {
+  background: #f6f6f6 !important;
+}
+
+.softBlueBg {
+  background: #effbff !important;
+}
+
+.noBgImg, .noBgImg .container {
+  background: none;
+  background-color: $softBlueBg;
+}
+
+.whiteText {
+  color: #ffffff;
+}
+
+a.greenButton {
+  background: #01ab6f;
+  border: none;
+  font-size: 18px;
+}
+
+//Images
+.imageCover { 
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    max-height: 100% !important;
+    padding: 5%;
+  }
+
+  div {
+    background: white;
+  }
+}
+
+.compactImage img {
+  min-height: 190px;
+  object-fit: cover;
+
+  @include mobile-small {
+    min-height: 100%;
+  }
+}
+
+.imageFull {
+  position: relative;
+
+  .heroColImage {
+    width: 65% !important;
+    max-height: 75vh;
+    padding: 0 0 0 4% !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+
+    @include mobile {
+      padding: 0 !important;
+      width: 100% !important;
+    }
+  }
+
+  @include mobile {
+    p {
+      max-width: 100% !important;
+    }
+  }
+}
+
+.imageGlowing {
+  img {
+    filter: drop-shadow(2px 5px 55px #bababa);
+    -webkit-filter: drop-shadow(2px 5px 55px #bababa);
+  }
+}
+
+.mobileFullWidth {
+  img {
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}
+
+.waveVideo {
+  .waveGlobal {
+    @media all and (max-width: 1470px) {
+      display: none;
+    }
+  }
+}
+
+//Videos
+.videoDesktop {
+  @include mobile {
+    div {
+      p {
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+//Colors
+.darkBlue {
+  color: $mainColorDark;
+}
+
+//Modal
+.loadingScreen {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999;
+
+  img{
+    width: 200px;
+  }
+}
+
+//Accordions
+.accordionToggle {
+  position: absolute;
+  right: 18px;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  cursor: pointer;
+  top: 0;
+
+  img {
+    top: 50%;
+    -webkit-transform: translate(-25px, -50%);
+    transform: translate(-25px, -50%);
+    position: absolute;
+    background: #DEF0F6;
+    padding: 10px;
+    border-radius: 99px;
+    height: 42px;
+    object-fit: contain;
+    width: 43px;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  @include mobile {
+    img {
+      max-width: 43px;
+    }
+  }
+}
+
+//Content and articles
+.articleContent {
+  max-width: 750px;
+  margin: 0% auto 5%;
+  padding: 5%;
+
+  h2, h3, h4, h5, h2 span, h3 span, h4 span, h5 span {
+    margin: 25px 0 15px;
+    color: $mainColorDark;
+  }
+
+  p, p span {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+    font-family: $gilroyMedium;
+  }
+}
+
+ul.postList {
+  padding: 5%;
+  list-style: none;
+  font-size: 20px;
+
+  @include mobile {
+    padding: 10%;
+
+    li {
+      margin: 15px 0;
+    }
+  }
+
+  h1, h2 {
+    color: $mainColorDark;
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+}
+
+///Agency lists
+.agencyCategoryListOuter {
+  background-color: #f1f1f1;
+}
+
+.agencyCategoryHeadline {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.agencyCategoryContainer {
+  background-color: #f1f1f1;
+  padding: 5%;
+}
+
+.agencyContainer {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.agencyCategoryDescription {
+  padding: 6% 10px 5%;
+
+  @include mobile {
+    padding: 6% 5% 5%;
+  }
+
+  @media all and (min-width: 1024px) and (max-width: 1200px) {
+    padding: 5%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  h2, h3, h2 span, h3 span {
+    font-size: 26px;
+    line-height: 27px;
+  }
+
+  p {
+    margin: 12px 0;
+  }
+}
+
+.agencyCategoriesList {
+  width: 100%;
+  display: inline-block;
+  list-style: none;
+  background-color: #f1f1f1;
+  padding: 5% 0;
+
+  li {
+    width: 48%;
+    display: inline-block;
+    text-align: center;
+    margin: 1%;
+
+    @include mobile {
+      width: 100%;
+      padding: 2%;
+      margin: 0;
+    }
+    
+    a {
+      width: 100%;
+      padding: 25px;
+      font-family: $gilroyBold;
+      font-size: 19px;
+      color: $mainColorDark;
+      background: #ffffff;
+      display: block;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+      border: 1px solid #D8D8D8;  
+
+      @include mobile {
+        padding: 15px;
+        font-size: 16px;
+      }
+
+      &:hover {
+        background: $mainColorDark;
+        color: white;
+      }
+    }
+  }
+}
+
+.agencyListContainer {
+  background: #F8F8F8;
+}
+
+.agencyListOuter {
+  padding: 0 2% 2%;
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.agencyListOuterSlim {
+  padding: 0 2% 2%;
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 100%;
+}
+
+.agencyLocalCity {
+  margin-left: 0;
+}
+
+.agencyTotal {
+  font-family: $gilroySemiBold;
+}
+
+.agencyTotalWrap {
+  padding: 5% 2% 10px;
+}
+
+li.agencyListElement {
+  background: white;
+  margin-bottom: 15px;
+  position: relative;
+  padding: 18px;
+  border-radius: 7px;
+  border: 1px solid #D8D8D8;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.14);
+  transition: .2s ease-in;
+
+  &:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.14);
+    transition: .2s ease-in;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  margin: 18px 0;
+
+  a {
+      margin: 0 auto;
+      border: 2px solid white;
+      min-width: 270px;
+      max-width: 270px;
+
+      @include mobile {
+          width: 100%;
+          max-width: 265px;
+      }
+  }
+}
+
+.listingPageHero {
+  width: 100%;
+  background: url("https://admin.partna.se/wp-content/uploads/2022/04/dark-bg.jpg");
+  background-size: cover;
+  padding: 5%;
+
+  @include mobile {
+    padding: 10% 5%;
+  }
+
+  h1 {
+      margin: 0 auto 1.2rem;
+      font-family: $gilroyExtraBold;
+      color: $mainColorDark;
+      text-align: center;
+      color: white;
+      
+      @include mobile {
+          font-size: 26px;
+          line-height: 29px;
+          max-width: 750px;
+      }
+  }
+
+  p {
+      font-family: $gilroyMedium;
+      color: $mainColorDark;
+      margin: 0 auto 30px;
+      max-width: 780px;
+      color: white;
+      line-height: 27px;
+      font-size: 21px;
+      text-align: center;
+
+      a {
+          color: $mainColorLight;
+      } 
+
+      @include mobile {
+          font-size: 16px;
+          line-height: 20px;
+      }
+  }
+}
+
+//Alignments
+.flexFill {
+  flex-shrink: 1;
+  flex-grow: 1;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.textCenter {
+  text-align: center;
+}
+
+// Input
+.textInput {
+  background: #ffffff;
+  border: 1px solid #8e8e8e;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  font-family: $gilroyMedium;
+}
+
+// React select
+.selectInputWhite {
+  font-family: $gilroyMedium;
+  height: 100%;
+}
+
+// No scroll on mobile (overlays)
+.noScrollMobile{
+  overflow: hidden;
+}
+
+.customSelect__control, .customSelectInsetBoxshadow__control{
+  height: 100%;
+}
+.customSelectInsetBoxshadow__control{
+  box-shadow: $insetBoxShadow;
+}
+
+// Breadrcrumbs
+.breadcrumbTopBar {
+  width: 100%;
+  background-color: #EBF1F8;
+  padding: 12px;
+  display: flex;
+}
+
+.breadcrumb {
+  width: 100%;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.breadcrumbInner {
+  align-items: center;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.breadcrumbs {
+  list-style: none;
+  width: 100%;
+  display: contents;
+}
+
+.breadcrumbSeparator {
+  &::after {
+    content: "";
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236D778A' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath d='M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'/%3E%3C/svg%3E");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 17px;
+    position: absolute;
+    right: -20px;
+    top: 4px;
+    width: 17px;
+  }
+}
+
+.breadcrumbStart {
+  margin-right: 25px;
+  position: relative;
+}
+
+.breadcrumbItem {
+  font-size: 16px;
+  color: black;
+  font-family: $gilroySemiBold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.listingPageTopCta {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  font-family: $gilroySemiBold;
+
+  a {
+    font-family: $gilroyBold;
+  }
+
+  @include mobile {
+      text-align: right;
+      line-height: 19px;
+      font-size: 14px;
+      margin-top: 6px;
+      justify-content: flex-start;
+  }
+}
+
+//Pagination
+.showMoreAgenciesWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5% 5%;
+}
+
+.showMoreAgencies {
+  box-shadow: none;
+  border-radius: 99px;
+  border: none;
+  background: #E8E8E8;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $mainColorDark;
+  font-size: 16px;
+  font-family: $gilroyExtraBold;
+  text-align: center;
+
+  &:hover {
+      background: $mainColorDark;
+      color: white;
+  }
+}

@@ -1,0 +1,238 @@
+/* Responsive design */
+@mixin mobile {
+  @media screen and (max-width: 1024px) { 
+      @content;
+  }
+}
+@mixin mobile-small {
+  @media screen and (max-width: 580px) { 
+      @content;
+  }
+}
+@mixin mobile-very-small {
+  @media screen and (max-width: 330px) { 
+      @content;
+  }
+}
+@mixin mobile-landscape {
+  @media all and (max-width: 767px) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 577px) { 
+      @content;
+  }
+}
+@mixin tablet-landscape {
+  @media screen and (min-width: 767px) and (max-width: 1180px) { 
+      @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1025px) { 
+      @content;
+  }
+}
+@mixin desktop-large {
+  @media screen and (min-width: 1200px) { 
+      @content;
+  }
+}
+
+@mixin desktop-ultra-large {
+  @media screen and (min-width: 1800px) { 
+      @content;
+  }
+}
+
+// Desktop first
+@mixin xs {
+  @media screen and (max-width: 577px) { 
+      @content;
+  }
+}
+@mixin sm {
+  @media screen and (max-width: 768px) { 
+      @content;
+  }
+}
+@mixin md {
+  @media screen and (max-width: 992px) { 
+      @content;
+  }
+}
+@mixin lg {
+  @media screen and (max-width: 1200px) { 
+      @content;
+  }
+}
+@mixin xl {
+  @media screen and (max-width: 1400px) { 
+      @content;
+  }
+}
+@mixin xxl {
+  @media screen and (max-width: 1700px) { 
+      @content;
+  }
+}
+
+/* Common elements */
+
+/* Buttons */
+@mixin primaryBtn {
+  padding: 14px 19px 12px;
+  border-radius: 99px;
+  border: none;
+  //box-shadow: 0 7px 15px rgb(104 117 236 / 35%);
+  margin: 0 20px 0 0;
+  font-size: 16px;
+  font-family: $gilroyBold;
+  background-color: $btnGreen;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  min-width: auto;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: .3s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $btnGreenHover;
+    //box-shadow: 0 7px 15px rgb(104 117 236 / 0%);
+    color: #ffffff;
+    transition: .3s;
+  }
+
+  @include mobile {
+    padding: 20px 18px 16px;
+    font-size: 17px;
+  }
+
+  @include tablet-landscape {
+    font-size: 18px;
+  }
+}
+
+@mixin primaryBtnDark{
+  background-color: $mainColorDark;
+  border: 2px solid $mainColorDark;
+  font-family: $gilroyBold;
+  text-transform: uppercase;
+  padding: 12px 15px 10px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+      background-color: $btnBlue;
+      border: 2px solid $btnBlue;
+  }
+  &:disabled{
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+  }
+}
+
+@mixin secondaryBtn {
+  padding: 14px 19px 12px;
+  border-radius: 99px;
+  margin: 0 12px 0 0;
+  font-size: 16px;
+  font-family: $gilroyBold;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: auto;
+  color: $mainColorLight;
+  border: 2px solid $mainColorLight;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: $btnBlue;
+    border: 2px solid $btnBlue;
+    color: #ffffff;
+    transition: .3s;
+  }
+
+  @include mobile {
+    padding: 16px 20px 16px;
+    font-size: 17px;
+  }
+
+  @include tablet-landscape {
+    font-size: 18px;
+  }
+}
+
+@mixin secondaryBtnHeader {
+  padding: 14px 19px 12px;
+  border-radius: 99px;
+  margin: 0 12px 0 0;
+  font-size: 16px;
+  font-family: $gilroyBold;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: auto;
+  color: $mainColorLight;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: none;
+    text-decoration: underline;
+    transition: .3s;
+  }
+
+  @include mobile {
+    padding: 16px 20px 16px;
+    font-size: 17px;
+  }
+
+  @include tablet-landscape {
+    font-size: 18px;
+  }
+}
+
+@mixin secondaryWhiteBtn {
+  padding: 13px 15px 11px;
+  border-radius: 99px;
+  margin: 0 12px 0 0;
+  font-size: 15px;
+  font-family: $gilroyBold;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: auto;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #ffffff;
+    color: $mainColorDark;
+  }
+
+  @include mobile {
+    font-size: 17px;
+  }
+}

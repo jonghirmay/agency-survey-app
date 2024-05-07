@@ -1,0 +1,90 @@
+@import "/styles/variables";
+@import "/styles/fonts";
+
+
+.wrapper {
+    padding: 50px;
+
+    width: 483px;
+    height: 626px;
+
+    background-image: url('/images/digi.png');
+    background-size: cover; // or contain, depending on how you want it to be displayed
+    background-position:  center; // to center the background image
+    background-repeat: no-repeat; // if you don't want it to repeat
+    background-size: 297px;
+    background-position: bottom center;
+    
+    .header{
+        margin-bottom: 23px;
+        color: #1A3053;
+        font-size: 20px;
+    }
+
+    .pictureFrame {
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #1A3053;
+        font-weight: bold;
+
+
+
+        input {
+            background-color: #F5F5F5;
+            height: 60px;
+            border-radius: 4px;
+            width: 100%
+        }
+
+        .sendEmail {
+            padding-top: 40px
+
+
+
+        }
+
+        .emailWarningMessage {
+            min-height: 20px;
+            font-size: 12px;
+            color: red;
+            position: absolute; /* absolutely position the warning message */
+          }
+          
+
+
+        p {
+            color: black;
+            font-size: 14px;
+            font-weight: 100;
+        }   
+    }
+    .nextButtonDiv{
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        .nextButton {
+          height: 51px;
+          width: 359px; 
+          background-color: #58BE85;
+          color: white;
+          border-radius: 30px;
+          border: 1px solid $borderLight;
+          box-shadow: $boxShadow;
+          margin-bottom: 100;
+          cursor: pointer; // Changes the cursor on hover
+  
+        }
+        
+    }
+}
+
+
+

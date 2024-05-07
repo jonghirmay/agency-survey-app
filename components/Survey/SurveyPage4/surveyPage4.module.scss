@@ -1,0 +1,117 @@
+@import "/styles/variables";
+@import "/styles/fonts";
+
+
+
+.wrapper {
+    padding: 50px;
+
+    width: 483px;
+    height: 626px;
+
+    background-image: url('/images/om-oss-partna-min.svg');
+    background-size: cover; // or contain, depending on how you want it to be displayed
+    background-position:  center; // to center the background image
+    background-repeat: no-repeat; // if you don't want it to repeat
+    background-size: 360px;
+    background-position: bottom center;
+
+    
+    .header {
+        margin-bottom: 23px;
+        color: #1A3053;
+        font-size: 20px;
+    }
+    
+    .grid {
+        display: flex;
+        flex-flow: row wrap;
+
+        margin-bottom: 0;
+        margin-top: 50px;
+
+        .endPhrase {
+            display: flex;
+            justify-content: center;
+        }
+
+        .resultsGrade {
+
+            
+            padding: 15px;
+            margin-right: 5px;
+            height: 181px;
+            width: 150px;
+            background-color: #F5F5F5;
+            border-radius: 10px;
+            font-size: 19px;
+            font-weight: bold;
+
+            p {
+                display: flex;
+                justify-content: center ;
+                padding-top: 45px;
+            }
+        }
+
+        .resultsMotivation {
+            font-size: 16;
+            font-weight: bold;
+            padding: 15px;
+            height: 181px;
+            width: 200px;
+            background-color: #F5F5F5;
+            border-radius: 10px;
+
+            p {
+                font-weight: 100;
+            }
+
+        }
+        
+        .endPhrase {
+            font-size: 19px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .bottomGrid {
+        padding-top: 40px;
+        display: flex;
+        flex-flow: wrap row;
+        align-items: center;
+        justify-content: center;
+
+        .lastPhrase {
+            font-size: 19;
+            font-weight: bold;
+        }
+
+        .offerButtonDiv {
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+    
+            .offerButton {
+                height: 51px;
+                width: 359px; 
+                background-color: #58BE85;
+                color: white;
+                border-radius: 30px;
+                border: 1px solid $borderLight;
+                box-shadow: $boxShadow;
+                margin-bottom: 100;
+                cursor: pointer; // Changes the cursor on hover'
+    
+                a {
+                    color: white;   
+                    text-decoration: none;
+                }
+            }
+    
+        }
+    }
+
+
+}
+

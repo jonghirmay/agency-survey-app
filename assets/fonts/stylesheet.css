@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Desyrel';
+    src: url('Desyrel.eot');
+    src: url('Desyrel.eot?#iefix') format('embedded-opentype'),
+        url('Desyrel.woff2') format('woff2'),
+        url('Desyrel.woff') format('woff'),
+        url('Desyrel.ttf') format('truetype'),
+        url('Desyrel.svg#Desyrel') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
